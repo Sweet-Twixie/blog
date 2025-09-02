@@ -66,4 +66,7 @@ In a similar fashion we define  **cubical complex**, which is a collection of si
 
 That's great, cause now we can actually **apply** this idea in image analysis. Remeber that each image is a grid of coloured pixels, and pixel is a natural $2$-cube. If we consider a binary image, where each pixel is either white or black, we just created a perfect example of a **cubical complex**, collection of cubes where an intersection between any two is either a point ($0$-cube) or an edge ($1$-cube). Similar strategy can be applied in a $3$D image (MRI, CT etc), where each *voxel* ($3$D pixel) is a $3$-cube. 
 
-Below you can see a binary image which represents a cubical complex. You can clearly see its homology: 4 connected components ($0$-dimension homology) and 4 holes ($1$-dimension homology). For visual purpose, I coloured the connected components and holes seperately. 
+Below you can see a binary image which represents a cubical complex. You can clearly see its homology: 4 connected components ($0$-dimension homology) and 3 holes ($1$-dimension homology). For visual purpose, I coloured the connected components and holes seperately. 
+
+![Diagram of Binary Image](assets/images/Binary image and homology.png)
+
