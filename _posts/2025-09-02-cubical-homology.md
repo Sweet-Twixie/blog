@@ -40,4 +40,4 @@ The problem with this approach is that the resulting point cloud can easily reac
 
 Of course, there are some clever tricks to simplify or filter the point cloud during extraction, but an even better approach is to consider pixels in their natural form: as squares. From there, simplicial complexes give way to cubical complexes. 
 
-
+![Simplices and Cubes]({{ "/assets/images/simplicies and cubes.png" | relative_url }})
