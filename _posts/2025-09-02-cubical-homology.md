@@ -68,7 +68,7 @@ That's great, cause now we can actually **apply** this idea in image analysis. R
 
 Below you can see a binary image which represents a cubical complex. You can clearly see its homology: 4 connected components ($0$-dimension homology) and 3 holes ($1$-dimension homology). For visual purpose, I coloured the connected components and holes seperately. 
 
-![Diagram of Binary Image]({{"assets/images/Binary image and homology.png"}})
+![Diagram of Binary Image]({{"assets/images/Binary image and homology.png" | relative_url}})
 
 ## Preprocessing Images
 
