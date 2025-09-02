@@ -38,4 +38,6 @@ A similar idea can be applied to images. We can extract data from an image in th
 
 The problem with this approach is that the resulting point cloud can easily reach sizes of $60{,}000$ points—or even over $1$ million for high-resolution images. With such large point clouds, the computational cost of constructing Vietoris–Rips complexes grows exponentially.
 
-Of course, there are some clever tricks to simplify or filter the point cloud during extraction, but an even better approach is to consider pixels in their natural form: as squares. From there, simplicial complexes give way to cubical complexes.
+Of course, there are some clever tricks to simplify or filter the point cloud during extraction, but an even better approach is to consider pixels in their natural form: as squares. From there, simplicial complexes give way to cubical complexes. 
+
+
