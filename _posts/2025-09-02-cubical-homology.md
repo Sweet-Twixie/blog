@@ -40,4 +40,24 @@ The problem with this approach is that the resulting point cloud can easily reac
 
 Of course, there are some clever tricks to simplify or filter the point cloud during extraction, but an even better approach is to consider pixels in their natural form: as squares. From there, simplicial complexes give way to cubical complexes. 
 
+Recall that we call an **$n$-simplex** is the convex hull of $(n + 1)$ points, where each point is connected to every other point, and the shape lives in $\mathbb{R}^m$ dimension, where $m > n$. A **simplicial complex** is a collection of simplicies such that:
+- every face is included: if the simplex is in the complex, than all its faces (lower dimesnion simplicies) are also included
+- simplicies intersect nicely: the intersection of any two simplices is either empty, or it’s a face of both.
+
+Again, we ommit any formal maths definitions for now, just building a visual intuition. We now are going to introduce **Cubical Complex**. 
+
+If you imagine a coordinate system in $\mathbb{R}^n$ and place points on the coordinate axes at unit distance from the origin (for example, in $\mathbb{R}^3$ the points are $(1,0,0)$, $(0,1,0)$, and $(0,0,1)$), then:  
+
+- An **$n$-simplex** is obtained by connecting those points pairwise.  
+- An **$n$-cube** is obtained by forming the hypercube with those points.  
+
+For example:  
+
+- A **$0$-simplex** and a **$0$-cube** both represent a single point in $0$D.  
+- A **$1$-simplex** and a **$1$-cube** both represent a line segment in $1$D.  
+- A **$2$-simplex** is a triangle, whereas a **$2$-cube** is a square in $2$D.  
+- A **$3$-simplex** is a tetrahedron, whereas a **$3$-cube** is a cube in $3$D.  
+
+
+
 ![Simplices and Cubes]({{ "/assets/images/simplicies and cubes.png" | relative_url }})
