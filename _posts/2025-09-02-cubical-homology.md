@@ -82,14 +82,18 @@ Note the difference: in simplicial homology, we keep all points and create incre
 
 Now we can turn our attention to how we can choose which pixels to keep and which to discard. There are several different methods, and you can even create your own, but in this article I won’t delve into the details. The most basic and versatile method is to look at the gray intensity.
 
-First, the image has to be converted to grayscale. You can cheat a bit by extracting the RGB channels from the image and then converting each into grayscale, but here we will focus on a simple gray image. Each pixel is now represented by a number corresponding to its gray intensity, either from $0$ to $1$ (where $0$ is white and $1$ is black) or from $0$ to $256$ (where $0$ is white). This is great news because now we can create a clear, continuous filtration function.
+First, the image has to be converted to grayscale. You can cheat a bit by extracting the RGB channels from the image and then converting each into grayscale, but here we will focus on a simple gray image. Each pixel is now represented by a number corresponding to its gray intensity, either from $0$ to $1$ (where $0$ is white and $1$ is black) or from $0$ to $255$ (where $0$ is white). This is great news because now we can create a clear, continuous filtration function.
 
 Without diving too deep into math, the basic idea is:
 
 1. Choose a threshold value.
 
-2. Each pixel with a grayscale value greater than this threshold is mapped to $1$.
+2. Each pixel with a grayscale value greater than this threshold is mapped to $1$ (or $255$ in another metric).
 
 3. Each pixel with a grayscale value less than this threshold is mapped to $0$.
 
-Congratulations! You have just created a binary image from the original one. By varying the threshold value, we can add more pixels each time. As I explained earlier, this allows us to intuitively see the homology from a binary image.
+Congratulations! You have just created a binary image from the original one. By varying the threshold value, we can add (or delete) more pixels each time. As I explained earlier, this allows us to intuitively see the homology from a binary image.
+
+The image below illustrates this basic technique on a simple grayscale image, and how the Cubical Complex changes with each threshold. 
+
+
