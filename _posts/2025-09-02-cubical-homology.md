@@ -1,4 +1,4 @@
-# Cubical Homology: Intuition and Application
+# Cubical Homology: The Intuitive Approach
 
 If you’re curious about how TDA can be applied in image processing or classification, you’ve probably noticed that there are simply not enough resources—barely any at all—on how to learn this “secret skill.” I ran into this problem firsthand and found that there are really only two main ways to learn Cubical Homology:
 
@@ -94,6 +94,9 @@ Without diving too deep into math, the basic idea is:
 
 Congratulations! You have just created a binary image from the original one. By varying the threshold value, we can add (or delete) more pixels each time. As I explained earlier, this allows us to intuitively see the homology from a binary image.
 
-The image below illustrates this basic technique on a simple grayscale image, and how the Cubical Complex changes with each threshold. 
+The image below illustrates this basic technique on a simple grayscale image, and how the Cubical Complex changes with each threshold.
 
+![Example of CH on a grayscale image]({{"assets/images/grayscale and threshold.png.png" | relative_url}})
+
+I hope you now have a bit more intuition about Topological Data Analysis, especially Cubical Homology in image processing. In the next article, I’ll dive into the actual applications of this technique. See you there!
 
