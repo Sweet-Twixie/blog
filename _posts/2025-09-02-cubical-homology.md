@@ -17,12 +17,10 @@ So — let the fun begin!
 ## A Quick Recap: Persistent Homology on Point Clouds
 
 The core idea of **Topological Data Analysis (TDA)** is to extract *topological cavities*—such as connected components and holes.  
-At this stage, I’ll assume you’re already somewhat familiar with **Persistent Homology** and how to extract it from a point cloud.  
+At this stage, I’ll assume you’re already somewhat familiar with **Persistent Homology**, at least briefly.  
 
 To recap briefly: given a point cloud, you place a ball around each point, using a chosen distance metric (commonly the Euclidean distance).  
-You then vary the radius (threshold) $\epsilon$.  
-
-When $n$ balls around $n$ points intersect pairwise, they form an $n$-dimensional **Vietoris–Rips simplex**.  
+You then vary the radius (threshold) $\epsilon$. When $n$ balls around $n$ points intersect pairwise, they form an $n$-dimensional **Vietoris–Rips simplex**.  
 
 Each time new simplices are created, you compute homology (using efficient algorithms such as Gaussian matrix elimination).  
 You then record the **birth** and **death** of each topological cavity (connected component or hole) in the form of:  
@@ -70,7 +68,28 @@ Below you can see a binary image which represents a cubical complex. You can cle
 
 ![Diagram of Binary Image]({{"assets/images/Binary image and homology.png" | relative_url}})
 
-## Preprocessing Images
+To some extent, a cubical complex is simpler than a simplicial complex. It is called a Cruel Irony, just like our obsession with topology (just why). In cubical homology, one pixel can only be connected to a maximum of 8 pixels, either via an edge or a vertex. In contrast, in the case of a point cloud, each point can be connected to as many points as the size of the cloud. For an image, this number can go up to 60,000, as we established earlier. So you risk putting your laptop on fire trying to compute Vietoris-Rips complexes (and don’t ask me how I know).
 
+## Filtration functions
 
+We can calculate cubical homology when we have a binary image, so all pixels are either black or white. Obviously, in the real world we rarely have binary images. This is why we introduce a filtration function, which essentially filters the pixels we want to keep from those we don’t.
 
+Let me explain. In a basic point cloud situation, we create a metric ball around each point and look for the pairwise intersections to construct a Vietoris-Rips complex at each threshold. We essentially generate a sequence of subsets of simplicial complexes. If we look at the sequence from the end — when everything is connected — we are essentially filtering this massive simplicial complex by “deleting” some of the edges. That’s filtration.
+
+Something even simpler happens with cubical homology. Remember that each pixel is a $2$-cube. By choosing which pixels to keep at each step, we are already performing a form of filtration.
+
+Note the difference: in simplicial homology, we keep all points and create increasingly complex simplices at each step. In cubical homology, we start with a small number of $2$-cubes (pixels) and add more with each step, simultaneously creating a different cubical complex. So much *simpler* than Simplicial Complex. 
+
+Now we can turn our attention to how we can choose which pixels to keep and which to discard. There are several different methods, and you can even create your own, but in this article I won’t delve into the details. The most basic and versatile method is to look at the gray intensity.
+
+First, the image has to be converted to grayscale. You can cheat a bit by extracting the RGB channels from the image and then converting each into grayscale, but here we will focus on a simple gray image. Each pixel is now represented by a number corresponding to its gray intensity, either from $0$ to $1$ (where $0$ is white and $1$ is black) or from $0$ to $256$ (where $0$ is white). This is great news because now we can create a clear, continuous filtration function.
+
+Without diving too deep into math, the basic idea is:
+
+1. Choose a threshold value.
+
+2. Each pixel with a grayscale value greater than this threshold is mapped to $1$.
+
+3. Each pixel with a grayscale value less than this threshold is mapped to $0$.
+
+Congratulations! You have just created a binary image from the original one. By varying the threshold value, we can add more pixels each time. As I explained earlier, this allows us to intuitively see the homology from a binary image.
