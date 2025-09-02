@@ -100,3 +100,4 @@ The image below illustrates this basic technique on a simple grayscale image, an
 
 I hope you now have a bit more intuition about Topological Data Analysis, especially Cubical Homology in image processing. In the next article, I’ll dive into the actual applications of this technique. See you there!
 
+Also, dear reader, I’d love to hear from you! If you have any questions, thoughts, or feedback, feel free to drop me an email. Maybe someday I’ll add a comment section to the blog, but until then, your messages are more than welcome.
