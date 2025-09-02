@@ -31,3 +31,11 @@ You then record the **birth** and **death** of each topological cavity (connecte
 - **Persistence diagrams**  
 
 This is a very short reminder of how things work in the basic point-cloud setting.
+
+## Cubical Homology
+
+A similar idea can be applied to images. We can extract data from an image in the form of a point cloud. The most straightforward way is to treat each pixel as a point in $\mathbb{R}^3$, with coordinates $(x, y, z)$, where $(x, y)$ is the position of the pixel on the grayscale image grid (for example, $256 \times 256$ or $1024 \times 1024$ for high-resolution images), and $z$ is the intensity of the grayscale value, ranging from $0$ (black) to $256$ (white).
+
+The problem with this approach is that the resulting point cloud can easily reach sizes of $60{,}000$ points—or even over $1$ million for high-resolution images. With such large point clouds, the computational cost of constructing Vietoris–Rips complexes grows exponentially.
+
+Of course, there are some clever tricks to simplify or filter the point cloud during extraction, but an even better approach is to consider pixels in their natural form: as squares. From there, simplicial complexes give way to cubical complexes.
