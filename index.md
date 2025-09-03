@@ -1,4 +1,4 @@
-## Welcome to my blog on Topological Data Analysis (TDA)!
+## Welcome to my blog on Topological Data Analysis!
 
 In this blog, I’ll be sharing my journey of learning TDA and exploring its applications in cancer data science, particularly in image processing. The posts will range from building a solid mathematical foundation — covering topics in algebraic topology, the backbone of TDA — to diving into practical applications in cancer image analysis.
 
