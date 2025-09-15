@@ -66,7 +66,7 @@ That's great, cause now we can actually **apply** this idea in image analysis. R
 
 Below you can see a binary image which represents a cubical complex. You can clearly see its homology: 4 connected components ($0$-dimension homology) and 3 holes ($1$-dimension homology). For visual purpose, I coloured the connected components and holes seperately. 
 
-![Diagram of Binary Image]({{"assets/images/Binary image and homology.png" | relative_url}})
+![Diagram of Binary Image]({{"assets/images/Binary image representing cavitiesgy.png" | relative_url}})
 
 To some extent, a cubical complex is simpler than a simplicial complex. It is called a Cruel Irony, just like our obsession with topology (just why). In cubical homology, one pixel can only be connected to a maximum of 8 pixels, either via an edge or a vertex. In contrast, in the case of a point cloud, each point can be connected to as many points as the size of the cloud. For an image, this number can go up to 60,000, as we established earlier. So you risk putting your laptop on fire trying to compute Vietoris-Rips complexes (and don’t ask me how I know).
 
